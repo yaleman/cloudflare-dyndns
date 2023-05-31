@@ -6,7 +6,7 @@ authors = ["James Hodgkinson <james@terminaloutcomes.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.10"
 requests = "^2.27.1"
 loguru = "^0.7.0"
 
@@ -15,3 +15,6 @@ loguru = "^0.7.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+cloudflare-dyndns = "cloudflare_dyndns.__main__:main"

@@ -233,10 +233,12 @@ def cli(auth_headers: Dict[str, str]) -> None:
         else:
             logger.info("No change required")
 
-if __name__ == '__main__':
+def main() -> None:
+    """ main func """
     config_files = [
         "~/update_dns.conf",
         "/etc/update_dns.conf",
+        "/data/update_dns.conf",
         ]
     for filename in config_files:
         config_filename = Path(filename).expanduser().resolve()
@@ -250,3 +252,6 @@ if __name__ == '__main__':
             cli(auth_headers=auth_headers_dict)
             sys.exit(0)
     logger.error("Couldn't find configuration file, looked in: {}", ",".join(config_files))
+
+if __name__ == '__main__':
+    main()
