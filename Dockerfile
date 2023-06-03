@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-alpine
 
 RUN mkdir -p /app/cloudflare_dyndns
 ADD pyproject.toml /app/
