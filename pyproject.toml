@@ -21,7 +21,7 @@ cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.9.0"
-ruff = "^0.3.1"
+ruff = "^0.3.2"
 pytest = "^8.0.2"
 black = "^24.2.0"
 types-requests = "^2.31.0.20240218"
