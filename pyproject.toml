@@ -20,7 +20,7 @@ backoff = "^2.2.1"
 cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
 
 [tool.poetry.group.dev.dependencies]
-mypy = "^1.10.0"
+mypy = "^1.10.1"
 ruff = "^0.4.10"
 pytest = "^8.2.2"
 black = "^24.4.2"
