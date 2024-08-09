@@ -23,7 +23,7 @@ cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
 mypy = "^1.11.1"
 ruff = "^0.5.7"
 pytest = "^8.3.2"
-black = "^24.4.2"
+black = "^24.8.0"
 types-requests = "^2.32.0.20240712"
 
 [build-system]
