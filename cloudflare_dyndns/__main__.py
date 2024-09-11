@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" uses canhazip to pull the public IP and update cloudflare DNS """
+"""uses canhazip to pull the public IP and update cloudflare DNS"""
 
 import os
 from pathlib import Path
@@ -96,10 +96,11 @@ def get_dns_record_id(
     )
 
     if "result" not in data:
-        logger.error("Error getting record data for name={} errors={}",
+        logger.error(
+            "Error getting record data for name={} errors={}",
             name,
-            data['errors'],
-            )
+            data["errors"],
+        )
         return None
     for record in data["result"]:
         foundit = True
@@ -254,6 +255,7 @@ def cli(config: ConfigFile) -> None:
             logger.info("No change required")
     else:
         logger.error("No existing records, stopping.")
+
 
 CONFIG_FILES = [
     "~/update_dns.conf",
