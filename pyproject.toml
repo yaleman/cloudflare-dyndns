@@ -1,42 +1,31 @@
-[tool.poetry]
-name = "cloudflare-dyndns"
-version = "0.0.2"
-description = "A terrible dynamic DNS updater for cloudflare"
-authors = [
-    "James Hodgkinson <james@terminaloutcomes.com>",
-]
-license = "MIT"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.32.4"
-loguru = "^0.7.3"
-pydantic = "^2.11"
-backoff = "^2.2.1"
-
-[tool.poetry.dev-dependencies]
-
-[tool.poetry.scripts]
-cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
-
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.17.0"
-ruff = "^0.12.3"
-pytest = "^8.4.1"
-black = "^25.1.0"
-types-requests = "^2.32.4.20250611"
-
-[build-system]
-requires = [
-    "poetry-core>=1.0.0",
-]
-build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "cloudflare-dyndns"
 description = "A terrible dynamic DNS updater for cloudflare"
-license = "MIT"
+license = { text = "MIT" }
 version = "0.0.2"
-authors = [
-    { name = "James Hodgkinson", email = "james@terminaloutcomes.com" },
+authors = [{ name = "James Hodgkinson", email = "james@terminaloutcomes.com" }]
+requires-python = "<4.0,>=3.10"
+dependencies = [
+    "requests>=2.32.3",
+    "loguru>=0.7.2",
+    "pydantic>=2.9",
+    "backoff>=2.2.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
+
+[dependency-groups]
+dev = [
+    "mypy<2.0.0,>=1.11.2",
+    "ruff<1.0.0,>=0.6.4",
+    "pytest<9.0.0,>=8.3.2",
+    "black<25.0.0,>=24.8.0",
+    "types-requests<3.0.0.0,>=2.32.0.20240905",
+    "backoff-stubs>=1.11.1",
 ]

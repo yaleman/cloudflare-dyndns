@@ -37,7 +37,7 @@ def get_zoneid(config: ConfigFile) -> Optional[str]:
     url = f"https://api.cloudflare.com/client/v4/zones?name={config.zone}&status=active"
 
     try:
-        response = requests.get(url=url, headers=config.auth_headers())
+        response = requests.get(url=url, headers=config.auth_headers(), timeout=30)
         response.raise_for_status()
     except requests.exceptions.HTTPError as error_message:
         logger.error("Failed to get zoneID: {}", error_message)
@@ -70,6 +70,7 @@ def get_dns_record_data(
                 "name": name,
                 "type_name": type_name,
             },
+            timeout=30,
         )
 
         response.raise_for_status()
@@ -137,7 +138,9 @@ def update_zone_record(
     if config.dry_run:
         logger.info("Would have updated {} to {}", name, content)
         return None
-    response = requests.put(url=url, json=data, headers=config.auth_headers())
+    response = requests.put(
+        url=url, json=data, headers=config.auth_headers(), timeout=30
+    )
     try:
         response.raise_for_status()
         result: Dict[str, Any] = response.json()

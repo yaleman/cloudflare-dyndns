@@ -1,0 +1,5 @@
+{
+    "zone" : "example.com",
+    "hostname" : "test.example.com",
+    "token" : "hunter2"
+}
