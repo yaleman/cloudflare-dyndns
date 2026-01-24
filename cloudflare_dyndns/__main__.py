@@ -277,7 +277,9 @@ def load_config() -> Optional[ConfigFile]:
         config_filename = Path(filename).expanduser().resolve()
         if config_filename.exists():
             # token = config_filename.open(encoding='utf-8').read().strip()
-            res = ConfigFile.parse_file(config_filename)
+            res = ConfigFile.model_validate_json(
+                config_filename.read_text(encoding="utf-8")
+            )
             break
         else:
             logger.debug("Couldn't find {}", config_filename)
@@ -300,8 +302,9 @@ def main() -> None:
             "Couldn't find configuration file, looked in: {}", ",".join(CONFIG_FILES)
         )
         sys.exit(1)
-    setup_logging(logger, "--debug" in sys.argv)
-    cli(config)
+    else:
+        setup_logging(logger, "--debug" in sys.argv)
+        cli(config)
 
 
 if __name__ == "__main__":
