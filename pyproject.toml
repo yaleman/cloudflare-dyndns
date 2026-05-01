@@ -27,5 +27,5 @@ dev = [
     "pytest>=9.0.3",
     "types-requests>=2.33.0.20260408",
     "backoff-stubs>=1.11.1.post1",
-    "ty>=0.0.32",
+    "ty>=0.0.33",
 ]
