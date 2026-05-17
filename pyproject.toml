@@ -10,7 +10,7 @@ dependencies = [
     "requests>=2.34.2",
     "loguru>=0.7.3",
     "pydantic>=2.13.4",
-    "backoff>=2.2.1",
+    "backoff>=2.2.0",
 ]
 
 [build-system]
@@ -26,6 +26,5 @@ dev = [
     "ruff>=0.15.13",
     "pytest>=9.0.3",
     "types-requests>=2.33.0.20260513",
-    "backoff-stubs>=1.11.1.post1",
     "ty>=0.0.36",
 ]
