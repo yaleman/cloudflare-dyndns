@@ -23,7 +23,7 @@ cloudflare-dyndns = "cloudflare_dyndns.__main__:main"
 [dependency-groups]
 dev = [
     "mypy>=2.1.0",
-    "ruff>=0.15.17",
+    "ruff>=0.15.18",
     "pytest>=9.1.1",
     "types-requests>=2.33.0.20260518",
     "ty>=0.0.51",
